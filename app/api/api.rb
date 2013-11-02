@@ -22,4 +22,19 @@ class API < Grape::API
       result = {:msg => 'done!'}
     end
   end
+
+  resources :users do
+    post do
+      user = User.find_by :email => params[:email]
+      if user.nil?
+        User.create(:name => params[:name],
+                    :uid => params[:uid],
+                    :provider => 'facebook',
+                    :email => params[:email],
+                    :password => Devise.friendly_token[0,20]
+                   )
+      end
+      result = {:msg => 'done!'}
+    end
+  end
 end
