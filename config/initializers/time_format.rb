@@ -1,0 +1,2 @@
+Time::DATE_FORMATS.merge!(:default => "%Y/%m/%d %I:%M %p", :ymd => "%Y/%m/%d", :ymd_zh => "%Y年%m月%d日", :ymdhms => "%Y-%m-%d %H:%M:%S")
+Date::DATE_FORMATS.merge!(:default => "%Y/%m/%d", :ymd_zh => "%Y年%m月%d日")
