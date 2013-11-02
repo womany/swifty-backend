@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131102054353) do
+ActiveRecord::Schema.define(version: 20131102070755) do
+
+  create_table "quotes", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.text     "content"
+    t.integer  "user_id"
+    t.string   "comment"
+    t.integer  "comments_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
