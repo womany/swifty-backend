@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131102071506) do
+ActiveRecord::Schema.define(version: 20131102090318) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20131102071506) do
     t.string   "url"
     t.text     "content"
     t.integer  "user_id"
-    t.string   "comment"
+    t.string   "annotation"
     t.integer  "comments_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
