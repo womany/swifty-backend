@@ -1,18 +1,30 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-md-6 col-md-offset-3">
     <div class="windy-demo">
       <ul id="wi-el" class="wi-container">
         <% @quotes.each do |quote| %>
           <li>
-            <span>
-              <img src="<%= "http://graph.facebook.com/#{quote.user.uid}/picture?width=128" %>" alt="<%= quote.user.name %>">
-              <%= quote.user.name %>
-            </span>
-            <div class="content"><%= quote.content %></div>
-            <div class="info">
-              <span><%= link_to(quote.title, quote.url, :target => '_blank') %></span>
+            <div class="left-quotation-mark">
+              <%= image_tag('left_quote.png') %>
             </div>
-            <div class="annotation"><%= quote.annotation %></div>
+            <div class="user-image">
+              <img src="<%= "http://graph.facebook.com/#{quote.user.uid}/picture?width=96" %>" alt="<%= quote.user.name %>" class="img-circle">
+            </div>
+            <div class="content">
+              <%= quote.content %>
+            </div>
+            <div class="link">
+              <%= link_to quote.url do %>
+                <i class="fa fa-external-link"></i> <%= quote.title %> (<%= quote.url %>)
+              <% end %>
+            </div>
+            <div class="info">
+              <span><i class="fa fa-user"></i> <%= quote.user.name %> </span>
+              <span><i class="fa fa-clock-o"></i> <%= quote.created_at.strftime("%Y/%m/%d/") %> </span>
+            </div>
+            <div class="right-quotation-mark">
+              <%= image_tag('right_quote.png') %>
+            </div>
           </li>
         <% end %>
       </ul>

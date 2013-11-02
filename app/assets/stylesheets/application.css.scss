@@ -5,22 +5,22 @@
  *= require style1
  */
 
-$navbar-height: 60px;
-$navbar-default-color: #fff;
-$navbar-default-bg: #F55F02;
-$navbar-default-link-color: #fff;
-$navbar-default-link-hover-color: #fff;
-$navbar-default-link-hover-bg: #E5491F;
-$navbar-default-link-active-color: #fff;
-$navbar-default-link-active-bg: #E5491F;
-$navbar-default-brand-color: #fff;
-$navbar-default-brand-hover-color: #fff;
+ $navbar-height: 60px;
+ $navbar-default-color: #fff;
+ $navbar-default-bg: #F55F02;
+ $navbar-default-link-color: #fff;
+ $navbar-default-link-hover-color: #fff;
+ $navbar-default-link-hover-bg: #E5491F;
+ $navbar-default-link-active-color: #fff;
+ $navbar-default-link-active-bg: #E5491F;
+ $navbar-default-brand-color: #fff;
+ $navbar-default-brand-hover-color: #fff;
 
-$liten-orange: #FC9325;
-$darken-orange: #E5491F;
-@import 'twitter/bootstrap';
+ $liten-orange: #FC9325;
+ $darken-orange: #E5491F;
+ @import 'twitter/bootstrap';
 
-body {
+ body {
   padding-top: 70px;
   background-color: #eee;
 }
@@ -67,6 +67,40 @@ body {
   margin: 2px 10px;
   padding: 20px;
   color: #888;
+}
+
+.windy-demo {
+  .left-quotation-mark {
+    position: absolute;
+  }
+  .right-quotation-mark {
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+  }
+  .user-image {
+    text-align: center;
+  }
+  .content {
+    color: #333;
+    margin: 20px;
+    padding: 20px 0px;
+    border-bottom: 1px solid #DDD;
+  }
+  .link {
+    padding: 0px 20px;
+    a {
+      text-decoration: none;
+      color: #BBB;
+      &:hover {
+        color: #BBB;
+      }
+    }
+  }
+  .info {
+    margin: 5px 0;
+    padding: 0px 20px;
+  }
 }
 
 .windy-demo nav span {
