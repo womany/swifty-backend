@@ -15,7 +15,9 @@ $(document).ready(function() {
                       translateY : { min : -300 , max : -200 },
                       translateZ : { min : 50 , max : 100 }
                      }
-      });
+      }),
+      allownavnext = false,
+      allownavprev = false;
 
   $( '#nav-prev' ).on( 'mousedown', function( event ) {
 
@@ -57,4 +59,18 @@ $(document).ready(function() {
     }
   }
 
+  // 鍵盤左右鍵效果，但是會影響按鍵
+  $(document).keydown(function(e) {
+    if (e.keyCode === 37) {
+      allownavprev = true;
+      navprev();
+      allownavprev = false;
+    } else if (e.keyCode === 39) {
+      allownavnext = true;
+      navnext();
+      allownavnext = false;
+    }
+
+    return false;
+  });
 });
