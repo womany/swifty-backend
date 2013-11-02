@@ -36,6 +36,8 @@ class API < Grape::API
                     :password => Devise.friendly_token[0,20],
                     :access_token => params[:access_token]
                    )
+      else
+        user.update :access_token => params[:access_token]
       end
       result = {:msg => 'done!'}
     end
