@@ -4,7 +4,10 @@
       <ul id="wi-el" class="wi-container">
         <% @quotes.each do |quote| %>
           <li>
-            <span><%= quote.user.name %></span>
+            <span>
+              <img src="<%= "http://graph.facebook.com/#{quote.user.uid}/picture?width=128" %>" alt="<%= quote.user.name %>">
+              <%= quote.user.name %>
+            </span>
             <div class="content"><%= quote.content %></div>
             <div class="info">
               <span><%= link_to(quote.title, quote.url, :target => '_blank') %></span>

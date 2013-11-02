@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @quotes = Quote.all
+    @quotes = Quote.includes(:user).all
   end
 end
