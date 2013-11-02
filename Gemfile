@@ -7,6 +7,9 @@ gem 'rails', '4.0.1'
 gem 'mysql2'
 
 gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_commentable'
 gem 'auto_html'
