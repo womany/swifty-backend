@@ -6,7 +6,7 @@ gem 'rails', '4.0.1'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
-gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
