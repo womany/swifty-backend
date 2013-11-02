@@ -23,7 +23,9 @@ module SwiftyBackend
 
     # Devise default layout
     config.to_prepare do
-      Devise::Mailer.layout 'application'
+      Devise::PasswordsController.layout 'devise'
+      Devise::SessionsController.layout 'devise'
+      Devise::Mailer.layout 'devise'
     end
   end
 end
