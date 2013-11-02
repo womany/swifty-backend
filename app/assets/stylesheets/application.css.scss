@@ -1,8 +1,17 @@
 /*
  *= require font-awesome
+ *= require windy
+ *= require demo
+ *= require style1
  */
+
+@import 'twitter/bootstrap';
 
 body {
   padding-top: 70px;
+  background-color: #eee;
 }
-@import 'twitter/bootstrap';
+
+.windy-demo nav span {
+  background: image-url('nav.png') no-repeat 100% 0;
+}

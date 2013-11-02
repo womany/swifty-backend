@@ -1,24 +1,22 @@
 <div class="row">
   <div class="col-lg-12">
-    <table class="table table-hover">
-      <thead>
-        <tbody>
-          <% @quotes.each do |quote| %>
-            <tr>
-              <td><%= quote.user.name %></td>
-              <td><%= link_to(quote.title, quote.url, :target => '_blank') %></td>
-              <td><%= quote.content %></td>
-              <td><%= quote.annotation %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </thead>
-    </table>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-12 pagination-centered">
-    <%= will_paginate @quotes, :renderer => BootstrapPagination::Rails, :bootstrap => 3 %>
+    <div class="windy-demo">
+      <ul id="wi-el" class="wi-container">
+        <% @quotes.each do |quote| %>
+          <li>
+            <span><%= quote.user.name %></span>
+            <div class="content"><%= quote.content %></div>
+            <div class="info">
+              <span><%= link_to(quote.title, quote.url, :target => '_blank') %></span>
+            </div>
+            <div class="annotation"><%= quote.annotation %></div>
+          </li>
+        <% end %>
+      </ul>
+      <nav>
+        <span id="nav-prev">prev</span>
+        <span id="nav-next">next</span>
+      </nav>
+    </div>
   </div>
 </div>
