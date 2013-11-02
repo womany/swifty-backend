@@ -12,6 +12,7 @@ gem 'omniauth-facebook', '1.4.0'
 
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_commentable'
+gem 'acts-as-taggable-on'
 gem 'auto_html'
 gem 'settingslogic'
 gem 'ransack'
