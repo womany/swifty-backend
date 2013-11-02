@@ -63,6 +63,7 @@ GEM
     cells (3.9.0)
       actionpack (>= 3.0)
       railties (>= 3.0)
+    chunky_png (1.2.8)
     coderay (1.1.0)
     coercible (0.2.0)
       backports (~> 3.0, >= 3.1.0)
@@ -74,6 +75,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.3)
@@ -91,6 +98,7 @@ GEM
       multipart-post (~> 1.2.0)
     font-awesome-rails (4.0.1.0)
       railties (>= 3.2, < 5.0)
+    fssm (0.2.10)
     grape (0.6.1)
       activesupport
       builder
@@ -270,6 +278,7 @@ DEPENDENCIES
   capistrano_colors
   cells
   coffee-rails (~> 4.0.0)
+  compass-rails
   devise
   font-awesome-rails
   grape
