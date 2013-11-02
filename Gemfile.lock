@@ -34,6 +34,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     acts_as_commentable (4.0.1)
+    addressable (2.3.5)
     annotate (2.5.0)
       rake
     arel (4.0.1)
@@ -124,6 +125,10 @@ GEM
     jwt (0.1.8)
       multi_json (>= 1.5)
     kgio (2.8.1)
+    koala (1.8.0rc1)
+      addressable
+      faraday
+      multi_json
     kramdown (1.2.0)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -273,6 +278,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   jquery-rails
+  koala (~> 1.8.0rc1)
   mysql2
   omniauth
   omniauth-facebook (= 1.4.0)

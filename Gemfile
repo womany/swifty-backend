@@ -16,6 +16,7 @@ gem 'auto_html'
 gem 'settingslogic'
 gem 'ransack'
 gem 'cells'
+gem 'koala', '~> 1.8.0rc1'
 
 # API
 gem 'grape'

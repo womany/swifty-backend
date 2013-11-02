@@ -15,11 +15,12 @@ class API < Grape::API
       user = User.find_by :email => params[:email]
       return result = {:msg => 'user not found!'} if user.nil?
 
-      user.quotes.create(:url => params[:title],
-                         :title => params[:title],
-                         :annotation => params[:annotation],
-                         :content => params[:content],
-                         :access_token => params[:access_token])
+      quote = user.quotes.create(:url => params[:title],
+                                 :title => params[:title],
+                                 :annotation => params[:annotation],
+                                 :content => params[:content],
+                                 :access_token => params[:access_token])
+      quote.share_to_fb if params[:share] == '1'
       result = {:msg => 'done!'}
     end
   end

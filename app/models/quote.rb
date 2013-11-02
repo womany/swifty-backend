@@ -16,4 +16,13 @@
 class Quote < ActiveRecord::Base
   belongs_to :user
   acts_as_commentable
+
+  def share_to_fb
+    graph   = Koala::Facebook::API.new(user.access_token)
+    fb_user = graph.put_wall_post(annotation, {
+                                    :name => title,
+                                    :link => url,
+                                    :description => content
+                                  })
+  end
 end
