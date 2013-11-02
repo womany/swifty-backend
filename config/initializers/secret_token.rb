@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SwiftyBackend::Application.config.secret_key_base = 'bfa934ff50da1470195c4fcbe265cfece05bd3655df23db1343dceb8a9cfae85b2189f27e9b0216c99ebf6302a27f4f3bd3dc687dc072ae836ecf825a8467996'
+SwiftyBackend::Application.config.secret_key_base = Settings.secret_token
