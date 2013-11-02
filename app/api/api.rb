@@ -18,7 +18,8 @@ class API < Grape::API
       user.quotes.create(:url => params[:title],
                          :title => params[:title],
                          :annotation => params[:annotation],
-                         :content => params[:content])
+                         :content => params[:content],
+                         :access_token => params[:access_token])
       result = {:msg => 'done!'}
     end
   end

@@ -18,6 +18,7 @@
 #  name                   :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  access_token           :text
 #
 
 class User < ActiveRecord::Base
@@ -31,12 +32,15 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    unless user
+    if user
+      user.update :access_token => auth.credentials.token
+    else
       user = User.create(:name => auth.extra.raw_info.name,
                          :provider => auth.provider,
                          :uid => auth.uid,
                          :email => auth.info.email,
-                         :password => Devise.friendly_token[0,20]
+                         :password => Devise.friendly_token[0,20],
+                         :access_token => auth.credentials.token
                         )
     end
     user
