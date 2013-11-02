@@ -5,11 +5,27 @@
  *= require style1
  */
 
+$navbar-height: 60px;
+$navbar-default-color: #fff;
+$navbar-default-bg: #F55F02;
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-color: #fff;
+$navbar-default-link-hover-bg: #E5491F;
+$navbar-default-link-active-color: #fff;
+$navbar-default-link-active-bg: #E5491F;
+$navbar-default-brand-color: #fff;
+$navbar-default-brand-hover-color: #fff;
+
+$liten-orange: #FC9325;
 @import 'twitter/bootstrap';
 
 body {
   padding-top: 70px;
   background-color: #eee;
+}
+.lighten-header{
+  min-height: $navbar-height;
+  background-color: $liten-orange;
 }
 
 .windy-demo nav span {
