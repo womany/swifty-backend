@@ -13,7 +13,14 @@
         </div>
         <!-- Brand and toggle get grouped for better mobile display -->
       </div>
-      <div class="col-sm-6 lighten-header"></div>
+      <div class="col-sm-6 lighten-header">
+        <% if user_signed_in? %>
+          <div class="input-group" id="search">
+            <span class="input-group-addon" id="search-bar"><i class="fa fa-search fa-fw"></i></span>
+            <input class="form-control" id="search-input" type="input" placeholder="搜尋……">
+          </div>
+        <% end %>
+      </div>
       <div class="col-sm-3">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse pull-left">

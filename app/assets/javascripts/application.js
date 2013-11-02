@@ -3,6 +3,7 @@
 //= require twitter/bootstrap
 //= require modernizr
 //= require jquery.windy
+//= require jquery.url
 
 $(document).ready(function() {
   var $el = $( '#wi-el' ),
@@ -59,7 +60,6 @@ $(document).ready(function() {
     }
   }
 
-  // 鍵盤左右鍵效果，但是會影響按鍵
   $(document).keydown(function(e) {
     if (e.keyCode === 37) {
       allownavprev = true;
@@ -70,5 +70,18 @@ $(document).ready(function() {
       navnext();
       allownavnext = false;
     }
+  });
+
+  $('#search-input').val(decodeURIComponent($.url.param('q')));
+  $('#search-input').focus(function(){
+    $(this).on('keypress', function(e){
+      if(e.keyCode == 13){
+        $('#search-bar').trigger('click');
+      }
+    });
+  });
+
+  $('#search-bar').click(function(){
+    window.location = '/search?q=' + encodeURIComponent($('#search-input').val());
   });
 });
