@@ -1,7 +1,13 @@
-require 'rack/contrib'
+require 'rack/cors'
 
 class API < Grape::API
-  use Rack::JSONP
+  use Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => :get
+    end
+  end
+
   format :json
 
   resources :quotes do

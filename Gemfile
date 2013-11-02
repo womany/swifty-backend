@@ -21,7 +21,7 @@ gem 'cells'
 gem 'grape'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
-gem 'rack-contrib'
+gem 'rack-cors'
 
 # assets
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
