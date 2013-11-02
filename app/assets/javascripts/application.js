@@ -6,18 +6,18 @@
 
 $(document).ready(function() {
   var $el = $( '#wi-el' ),
-      windy = $el.windy({
-        boundaries : {
-                      rotateX : { min : 40 , max : 90 },
-                      rotateY : { min : -15 , max : 15 },
-                      rotateZ : { min : -5 , max : 5 },
-                      translateX : { min : -200 , max : 200 },
-                      translateY : { min : -300 , max : -200 },
-                      translateZ : { min : 50 , max : 100 }
-                     }
-      }),
-      allownavnext = false,
-      allownavprev = false;
+  windy = $el.windy({
+    boundaries : {
+      rotateX : { min : 40 , max : 90 },
+      rotateY : { min : -15 , max : 15 },
+      rotateZ : { min : -5 , max : 5 },
+      translateX : { min : -200 , max : 200 },
+      translateY : { min : -300 , max : -200 },
+      translateZ : { min : 50 , max : 100 }
+    }
+  }),
+  allownavnext = false,
+  allownavprev = false;
 
   $( '#nav-prev' ).on( 'mousedown', function( event ) {
 
@@ -70,7 +70,5 @@ $(document).ready(function() {
       navnext();
       allownavnext = false;
     }
-
-    return false;
   });
 });
