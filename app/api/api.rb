@@ -18,8 +18,8 @@ class API < Grape::API
       quote = user.quotes.create(:url => params[:title],
                                  :title => params[:title],
                                  :annotation => params[:annotation],
-                                 :content => params[:content],
-                                 :access_token => params[:access_token])
+                                 :content => params[:content]
+                                 )
       quote.share_to_fb if params[:share] == '1'
       result = {:msg => 'done!'}
     end
@@ -33,7 +33,8 @@ class API < Grape::API
                     :uid => params[:uid],
                     :provider => 'facebook',
                     :email => params[:email],
-                    :password => Devise.friendly_token[0,20]
+                    :password => Devise.friendly_token[0,20],
+                    :access_token => params[:access_token]
                    )
       end
       result = {:msg => 'done!'}
