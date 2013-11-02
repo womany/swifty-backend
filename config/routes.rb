@@ -11,6 +11,8 @@ SwiftyBackend::Application.routes.draw do
   mount API => '/api'
   mount SwaggerRoot => '/'
 
-  root 'home#index', as: :authenticated_root
+  authenticated :user do
+    root 'home#index', :as => :authenticated_root
+  end
   root 'welcome#index'
 end
