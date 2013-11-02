@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="quotes-title">
+      搜尋字串： <%= params[:q] %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% @quotes.each do |quote| %>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="quote">
+      <div class="quote-content">
+        <%= quote.content %>
+      </div>
+      <div class="quote-link">
+        <%= link_to quote.url do %>
+          <i class="fa fa-external-link"></i> <%= quote.title %> (<%= quote.url %>)
+        <% end %>
+      </div>
+    </div>
+    <div class="quote-annotation">
+      <%= quote.annotation %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="col-md-6 col-md-offset-3 pagination-centered">
+    <%= will_paginate @quotes, :renderer => BootstrapPagination::Rails, :bootstrap => 3 %>
+  </div>
+</div>

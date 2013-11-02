@@ -6,6 +6,7 @@ SwiftyBackend::Application.routes.draw do
              :path_names  => {:sign_in => "login",
                               :sign_out => "logout"}
 
+  resource :search, :only => [:show]
 
   mount GrapeSwaggerRails::Engine => '/api/swagger'
   mount API => '/api'
