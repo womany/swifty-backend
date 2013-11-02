@@ -17,8 +17,11 @@ gem 'settingslogic'
 gem 'ransack'
 gem 'cells'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+# API
+gem 'grape'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+gem 'rack-contrib'
 
 # assets
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', :github => 'anjlab/bootstrap-rails'
