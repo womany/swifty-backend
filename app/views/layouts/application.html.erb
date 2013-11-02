@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-tw"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <title>Swifty</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <meta property="fb:app_id" content="<%= Settings.facebook_app.id %>"/>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= yield :header_includes %>
 </head>
 <body>
+  <div id="fb-root"></div>
+
   <%= render_cell :shared, :navbar %>
 
   <div class="container">
     <%= yield %>
   </div>
+
+  <script type="text/javascript">
+    window.fbAsyncInit = function() {
+      FB.init({appId: <%= Settings.facebook_app.id %>,
+               status: true, // check login status
+               cookie: true, // enable cookies to allow the server to access the session
+               channelUrl: '//womany.net/fb_channel.html', // add channelURL to avoid IE redirect problems
+               oauth: true,
+               xfbml: true});
+    };
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol + '//connect.facebook.net/zh_TW/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+    $(window).on('load', function(e){
+      if (window.location.hash == '#_=_') {
+        window.location.hash = ''; // for older browsers, leaves a # behind
+        history.pushState('', document.title, window.location.pathname); // nice and clean
+        e.preventDefault(); // no page reload
+      }
+    });
+  </script>
+  <%= yield(:footer_includes) %>
 </body>
 </html>
