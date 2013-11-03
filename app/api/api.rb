@@ -16,7 +16,7 @@ class API < Grape::API
       return result = {:msg => 'user not found!'} if user.nil?
 
       quote = user.quotes.create(:url => params[:title],
-                                 :title => params[:title],
+                                 :title => params[:url],
                                  :annotation => params[:annotation],
                                  :content => params[:content],
                                  :tag_list => params[:tag]
