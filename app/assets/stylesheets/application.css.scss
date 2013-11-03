@@ -47,21 +47,23 @@ body {
   margin-top: 20px;
   border-bottom: 20px solid #DDD;
 }
-.quotation-mark {
-  position: absolute;
-  top: 5px;
-  left: -65px;
-}
 .quote {
+  .quotation-mark {
+    position: relative;
+    top: -30px;
+    left: -120px;
+  }
   margin-top: 20px;
   padding: 10px 40px;
   background-color: #fff;
   .quote-content {
     color: #333;
     padding: 10px 0;
-    border-bottom: 1px solid #DDD;
+    position: relative;
+    top: -40px;
   }
   .quote-link {
+    border-top: 1px solid #DDD;
     padding: 10px 0;
     a {
       text-decoration: none;
