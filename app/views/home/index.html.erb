@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="row">
-  <% current_user.quotes.each do |quote| %>
+  <% @quotes.each do |quote| %>
   <div class="col-md-6 col-md-offset-3">
     <div class="quotation-mark">
       <%= image_tag('quote.png') %>
