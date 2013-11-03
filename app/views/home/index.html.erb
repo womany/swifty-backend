@@ -2,30 +2,32 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="quotes-title">
       <% if params[:tag] %>
-        <%= params[:tag] %>
+      <%= params[:tag] %>
       <% else %>
-        所有你喜歡的
+      所有你喜歡的
       <% end %>
     </div>
   </div>
-  <div class="col-md-3 tags">
-    <div class="all-tag">
-      <h3>
-        <%= link_to "所有 tag", root_path %>
-        <span class="pull-right label label-default"><%= @quotes.count %></span>
-      </h3>
-    </div>
-    <div class="each-tag">
-      <% @tags.each do |tag| %>
+  <div class="col-md-3">
+    <div data-spy="affix" data-offset-top="100">
+      <div class="all-tag">
+        <h3>
+          <%= link_to "所有 tag", root_path %>
+          <span class="label label-default"><%= @quotes.count %></span>
+        </h3>
+      </div>
+      <div class="each-tag">
+        <% @tags.each do |tag| %>
         <h3>
           <%= link_to(tag, tag_url(:tag => tag)) %>
           <% if params[:tag] %>
-            <span class="pull-right label label-info"><%= @quotes.tagged_with(tag).count %></span>
+          <span class="label label-info"><%= @quotes.tagged_with(tag).count %></span>
           <% else %>
-            <span class="pull-right label label-default"><%= @quotes.tagged_with(tag).count %></span>
+          <span class="label label-default"><%= @quotes.tagged_with(tag).count %></span>
           <% end %>
         </h3>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -41,7 +43,7 @@
       </div>
       <div class="quote-link">
         <%= link_to quote.url do %>
-          <i class="fa fa-external-link"></i> <%= quote.title %> (<%= quote.url %>)
+        <i class="fa fa-external-link"></i> <%= quote.title %> (<%= quote.url %>)
         <% end %>
       </div>
     </div>
