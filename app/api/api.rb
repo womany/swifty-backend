@@ -18,7 +18,8 @@ class API < Grape::API
       quote = user.quotes.create(:url => params[:title],
                                  :title => params[:title],
                                  :annotation => params[:annotation],
-                                 :content => params[:content]
+                                 :content => params[:content],
+                                 :tag_list => params[:tag]
                                  )
       quote.share_to_fb if params[:share] == '1'
       result = {:msg => 'done!'}
