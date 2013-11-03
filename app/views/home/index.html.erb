@@ -27,45 +27,23 @@
     <% end %>
   </div>
   <div class="col-md-3">
-    <div data-spy="affix" data-offset-top="100">
-      <div class="all-tag">
-        <h3>
-          <%= link_to "所有 tag", root_path %>
-          <span class="label label-default pull-right"><%= @quotes.count %></span>
-        </h3>
-      </div>
-      <div class="each-tag">
-        <% @tags.each do |tag| %>
-        <h3>
-          <%= link_to(tag, tag_url(:tag => tag)) %>
-          <% if params[:tag] %>
-          <span class="label label-info pull-right"><%= @quotes.tagged_with(tag).count %></span>
-          <% else %>
-          <span class="label label-default pull-right"><%= @quotes.tagged_with(tag).count %></span>
-          <% end %>
-        </h3>
+    <div class="all-tag">
+      <h3>
+        <%= link_to "所有 tag", root_path %>
+        <span class="label label-default pull-right"><%= @quotes.count %></span>
+      </h3>
+    </div>
+    <div class="each-tag">
+      <% @tags.each do |tag| %>
+      <h3>
+        <%= link_to(tag, tag_url(:tag => tag)) %>
+        <% if params[:tag] %>
+        <span class="label label-info pull-right"><%= @quotes.tagged_with(tag).count %></span>
+        <% else %>
+        <span class="label label-default pull-right"><%= @quotes.tagged_with(tag).count %></span>
         <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <% @quotes.each do |quote| %>
-  <div class="quotation-mark">
-    <%= image_tag('quote.png') %>
-  </div>
-  <div class="quote">
-    <div class="quote-content">
-      <%= quote.content %>
-    </div>
-    <div class="quote-link">
-      <%= link_to quote.url do %>
-      <i class="fa fa-external-link"></i> <%= quote.title %> (<%= quote.url %>)
+      </h3>
       <% end %>
     </div>
   </div>
-  <div class="quote-annotation">
-    <%= quote.annotation %>
-  </div>
-  <% end %>
 </div>
