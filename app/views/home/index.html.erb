@@ -31,7 +31,7 @@
       <div class="all-tag">
         <h3>
           <%= link_to "所有 tag", root_path %>
-          <span class="label label-default"><%= @quotes.count %></span>
+          <span class="label label-default pull-right"><%= @quotes.count %></span>
         </h3>
       </div>
       <div class="each-tag">
@@ -39,9 +39,9 @@
         <h3>
           <%= link_to(tag, tag_url(:tag => tag)) %>
           <% if params[:tag] %>
-          <span class="label label-info"><%= @quotes.tagged_with(tag).count %></span>
+          <span class="label label-info pull-right"><%= @quotes.tagged_with(tag).count %></span>
           <% else %>
-          <span class="label label-default"><%= @quotes.tagged_with(tag).count %></span>
+          <span class="label label-default pull-right"><%= @quotes.tagged_with(tag).count %></span>
           <% end %>
         </h3>
         <% end %>
