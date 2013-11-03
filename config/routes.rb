@@ -7,6 +7,7 @@ SwiftyBackend::Application.routes.draw do
                               :sign_out => "logout"}
 
   resource :search, :only => [:show]
+  get '/tag' => 'home#tag', :as => :tag
 
   mount GrapeSwaggerRails::Engine => '/api/swagger'
   mount API => '/api'

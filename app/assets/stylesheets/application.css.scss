@@ -122,3 +122,16 @@ body {
 #search-bar {
   cursor: pointer;
 }
+.all-tag {
+  border-bottom: 2px solid #DDD;
+}
+
+.tags {
+  a {
+    color: #333;
+    &:hover {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
